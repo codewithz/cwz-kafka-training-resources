@@ -13,3 +13,12 @@ Task 1
 		String[] stateArray = stateString.split(",");
 	</code>
   4.  Execute the producer and check the written records in the consumer 
+
+<hr>
+
+Wikimedia Base URL: 
+URL to check the Wikimedia changes : https://stream.wikimedia.org/v2/stream/recentchange
+
+<a href="https://esjewett.github.io/wm-eventsource-demo/"> Graphical </a>
+
+<a href="https://codepen.io/Krinkle/pen/BwEKgW?editors=1010"> Dashboard </a>
