@@ -11,5 +11,5 @@ Task 1
 						"SD,TN,TX,UT,VT,VA,WA,WV,WI,WY";
       
 		String[] stateArray = stateString.split(",");
-</code>
+	</code>
   4.  Execute the producer and check the written records in the consumer 
