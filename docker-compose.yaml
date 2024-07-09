@@ -125,3 +125,37 @@ services:
       KAFKA_REST_HOST_NAME: rest-proxy
       KAFKA_REST_BOOTSTRAP_SERVERS: 'broker-1:29092,broker-2:29093,broker-3:29094'
       KAFKA_REST_LISTENERS: "http://0.0.0.0:8082"
+
+  postgresql:
+    image: postgres:14
+    hostname: postgresql
+    container_name: postgresql
+    environment:
+      POSTGRES_DB: "conduktor-console"
+      POSTGRES_USER: "conduktor"
+      POSTGRES_PASSWORD: "change_me"
+      POSTGRES_HOST_AUTH_METHOD: "scram-sha-256"
+
+  conduktor-console:
+    image: conduktor/conduktor-console:1.24.1
+    hostname: conduktor-console
+    container_name: conduktor-console
+    depends_on:
+      - postgresql
+    ports:
+      - "8080:8080"
+    volumes:
+      - type: bind
+        source: "./platform-config.yml"
+        target: /opt/conduktor/platform-config.yaml
+        read_only: true
+    environment:
+      CDK_IN_CONF_FILE: /opt/conduktor/platform-config.yaml
+
+  conduktor-monitoring:
+    hostname: conduktor-monitoring
+    container_name: conduktor-monitoring
+    image: conduktor/conduktor-console-cortex:1.24.1
+    environment:
+      CDK_CONSOLE-URL: "http://conduktor-console:8080"
+    
