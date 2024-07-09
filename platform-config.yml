@@ -26,7 +26,7 @@ monitoring: # Monitoring settings (optional)
 clusters: # Cluster and schema registry configuration (optional)
   - id: my-local-kafka-cluster
     name: My Local Kafka Cluster
-    bootstrapServers: "localhost:9092"
+    bootstrapServers: "broker-1:29092,broker-2:29093,broker-3:29094"
     schemaRegistry:
       url: "http://schema-registry:8081"
 #    kafkaConnects:
