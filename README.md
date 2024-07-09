@@ -2,6 +2,7 @@
 Task 1
   1.  Create a topic called as your_company_orders [the topic contains 3 partitions and 2 RF]
   2.  Listed below is the list of states in USA, you need to generate 25000 records of orders where key is the state and value is order value between [$200 -- $2000]
+  3.  
        String stateString =
 				"AK,AL,AZ,AR,CA,CO,CT,DE,FL,GA," +
 						"HI,ID,IL,IN,IA,KS,KY,LA,ME,MD," +
@@ -11,4 +12,4 @@ Task 1
       
 		String[] stateArray = stateString.split(",");
 
-  3.  Execute the producer and check the written records in the consumer 
+  4.  Execute the producer and check the written records in the consumer 
