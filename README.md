@@ -22,3 +22,6 @@ URL to check the Wikimedia changes : https://stream.wikimedia.org/v2/stream/rece
 <a href="https://esjewett.github.io/wm-eventsource-demo/"> Graphical </a>
 
 <a href="https://codepen.io/Krinkle/pen/BwEKgW?editors=1010"> Dashboard </a>
+
+
+https://link.excalidraw.com/l/3AzfHZfUtYK/7u9rgl6ckAx
