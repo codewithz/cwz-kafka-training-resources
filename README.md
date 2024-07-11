@@ -25,3 +25,13 @@ URL to check the Wikimedia changes : https://stream.wikimedia.org/v2/stream/rece
 
 
 https://link.excalidraw.com/l/3AzfHZfUtYK/7u9rgl6ckAx
+
+<hr>
+
+For Compiling the avsc files to Java Generated files, download the jar in avro jar directory in the repo and use the following command
+
+<code>
+java -jar avro-tools-1.9.1.jar compile schema schema/User.avsc .
+</code>
+
+<hr>
