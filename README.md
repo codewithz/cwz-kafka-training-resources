@@ -59,3 +59,20 @@ networks:
   kafka-network:
     driver: bridge
 	</code>
+
+  <hr>
+  Word Count Kafka Stream Steps 
+
+  Word Count Streams App  
+
+Kafka Kafka Streams --> Kafka - 2 || Streams -1 
+
+1. Stream from Kafka    <null, "Kafka Kafka Streams">
+2. MapValues  lowercase  <null,"kafka kafka streams">
+3. FlatMapValues split by space <null,"kafka">, <null,"kafka">,<null,"streams">
+4. SelectKey apply a key <"kafka","kafka">, <"kafka","kafka">,<"streams","streams">
+5. GroupByKey before aggregation (<"kafka","kafka">, <"kafka","kafka">) (<"streams","streams">)
+6. Count accurance in each group (<"kafka",2>)(<"streams,1>)
+7. To write the data to kafka   --> topic
+
+  <hr>
