@@ -35,3 +35,22 @@ java -jar avro-tools-1.9.1.jar compile schema schema/User.avsc .
 </code>
 
 <hr>
+
+<code>
+  private static User extractKey(Event event) {
+        return User.newBuilder()
+                .setUserId(event.getInternalUser().getUserId().toString())
+                .setUsername(event.getInternalUser().getUsername())
+                .setDateOfBirth((int)event.getInternalUser().getDateOfBirth().toInstant().atZone(ZoneId.systemDefault()).getLong(ChronoField.EPOCH_DAY))
+                .build();
+    }
+
+    private static Product extractValue(Event event) {
+        return Product.newBuilder()
+                .setProductType(ProductType.valueOf(event.getInternalProduct().getProductType().name()))
+                .setColor(Color.valueOf(event.getInternalProduct().getColor().name()))
+                .setDesignType(DesignType.valueOf(event.getInternalProduct().getDesignType().name()))
+                .build();
+    }
+</code>
+<hr>
