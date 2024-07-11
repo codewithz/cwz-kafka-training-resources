@@ -54,7 +54,8 @@ java -jar avro-tools-1.9.1.jar compile schema schema/User.avsc .
     }
 </code>
 <hr>
-
+<code>
 networks:
   kafka-network:
     driver: bridge
+	</code>
